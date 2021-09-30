@@ -46,8 +46,10 @@ public class ControladorCalendario {
         try {
             ModelMap model=new ModelMap();
             String titulo = profesion;
-            Calendario calendario=servicioCalendario.obtenerUnCalendarioEspecifico(profesion);
-            model.put("calendario", calendario);
+            Calendario unSoloCalendario=servicioCalendario.obtenerUnCalendarioEspecifico(profesion);
+            ArrayList<Calendario> calendarios=servicioCalendario.obtenerCalendarios();
+            model.put("calendario", unSoloCalendario);
+            model.put("calendarios",calendarios);
             model.put("titulo", titulo);
             return new ModelAndView("calendarios", model);
         } catch (Exception e) {
