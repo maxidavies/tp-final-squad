@@ -4,10 +4,12 @@ import ar.edu.unlam.tallerweb1.modelo.Calendario;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioCalendario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
 @Service("servicioCalendario")
+@Transactional
 public class ServicioCalendarioImpl implements ServicioCalendario{
     private RepositorioCalendario repositorioCalendario;
 
